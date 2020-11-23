@@ -1,0 +1,28 @@
+{
+  "name": "ingestor",
+  "version": "1.0.0",
+  "description": "ingest new bank movement from raw data",
+  "main": "index.js",
+  "scripts": {
+    "whole": "npm run compile && node build/src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "npm run fix && npm run lint && tsc --build",
+    "fix": "gts fix",
+    "prepare": "npm.cmd run compile",
+    "pretest": "npm.cmd run compile",
+    "posttest": "npm.cmd run lint"
+  },
+  "author": "Luca Paganelli",
+  "license": "ISC",
+  "dependencies": {
+    "read-excel-file": "^4.1.0",
+    "typescript": "^4.1.2"
+  },
+  "devDependencies": {
+    "gts": "^3.0.2",
+    "typescript": "^4.0.3",
+    "@types/node": "^14.11.2"
+  }
+}
